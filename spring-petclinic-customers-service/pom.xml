@@ -62,7 +62,7 @@
             <artifactId>spring-cloud-sleuth-zipkin</artifactId>
         </dependency>
         -->
-        
+
         <!-- Third parties -->
         <dependency>
             <groupId>mysql</groupId>
