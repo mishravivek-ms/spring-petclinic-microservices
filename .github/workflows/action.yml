@@ -2,7 +2,7 @@ name: Deploy to Azure Spring Cloud with Key Vault
 on: [push]
 
 env:
-  AZURE_SUBSCRIPTION:  # customize this
+  AZURE_SUBSCRIPTION: MCAPS-Hybrid-REQ-52425-2023-mishravivek # customize this
   SPRING_CLOUD_SERVICE: petclinic-autoscaling # customize this
   KEYVAULT: petclinickey # customize this
   # ==== APPS ====:
