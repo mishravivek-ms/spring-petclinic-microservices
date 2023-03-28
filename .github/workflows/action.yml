@@ -2,9 +2,9 @@ name: Deploy to Azure Spring Cloud with Key Vault
 on: [push]
 
 env:
-  AZURE_SUBSCRIPTION: MCAPS-Hybrid-REQ-52425-2023-mishravivek # customize this
-  SPRING_CLOUD_SERVICE: petclinic-autoscaling # customize this
-  KEYVAULT: petclinickey # customize this
+  AZURE_SUBSCRIPTION: c18151ea-b3a2-439d-8505-fa24344ab4eb # customize this
+  SPRING_CLOUD_SERVICE: fedexpetclinicspringapp # customize this
+  KEYVAULT: fedexkv # customize this
   # ==== APPS ====:
   API_GATEWAY: api-gateway
   ADMIN_SERVER: admin-server
