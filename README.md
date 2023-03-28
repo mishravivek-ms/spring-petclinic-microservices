@@ -368,12 +368,12 @@ Deploy Spring Boot applications to Azure.
 ```bash
     az spring-cloud app deploy --name ${API_GATEWAY} \
         --jar-path ${API_GATEWAY_JAR} \
-        --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql'
+        --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql' --runtime-version Java_17
     
     
     az spring-cloud app deploy --name ${ADMIN_SERVER} \
         --jar-path ${ADMIN_SERVER_JAR} \
-        --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql'
+        --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql' --runtime-version Java_17
     
     
     az spring-cloud app deploy --name ${CUSTOMERS_SERVICE} \
@@ -382,7 +382,7 @@ Deploy Spring Boot applications to Azure.
         --env MYSQL_SERVER_FULL_NAME=${MYSQL_SERVER_FULL_NAME} \
               MYSQL_DATABASE_NAME=${MYSQL_DATABASE_NAME} \
               MYSQL_SERVER_ADMIN_LOGIN_NAME=${MYSQL_SERVER_ADMIN_LOGIN_NAME} \
-              MYSQL_SERVER_ADMIN_PASSWORD=${MYSQL_SERVER_ADMIN_PASSWORD}
+              MYSQL_SERVER_ADMIN_PASSWORD=${MYSQL_SERVER_ADMIN_PASSWORD} --runtime-version Java_17
     
     
     az spring-cloud app deploy --name ${VETS_SERVICE} \
@@ -391,7 +391,7 @@ Deploy Spring Boot applications to Azure.
         --env MYSQL_SERVER_FULL_NAME=${MYSQL_SERVER_FULL_NAME} \
               MYSQL_DATABASE_NAME=${MYSQL_DATABASE_NAME} \
               MYSQL_SERVER_ADMIN_LOGIN_NAME=${MYSQL_SERVER_ADMIN_LOGIN_NAME} \
-              MYSQL_SERVER_ADMIN_PASSWORD=${MYSQL_SERVER_ADMIN_PASSWORD}
+              MYSQL_SERVER_ADMIN_PASSWORD=${MYSQL_SERVER_ADMIN_PASSWORD} --runtime-version Java_17
               
     
     az spring-cloud app deploy --name ${VISITS_SERVICE} \
@@ -400,7 +400,7 @@ Deploy Spring Boot applications to Azure.
         --env MYSQL_SERVER_FULL_NAME=${MYSQL_SERVER_FULL_NAME} \
               MYSQL_DATABASE_NAME=${MYSQL_DATABASE_NAME} \
               MYSQL_SERVER_ADMIN_LOGIN_NAME=${MYSQL_SERVER_ADMIN_LOGIN_NAME} \
-              MYSQL_SERVER_ADMIN_PASSWORD=${MYSQL_SERVER_ADMIN_PASSWORD}
+              MYSQL_SERVER_ADMIN_PASSWORD=${MYSQL_SERVER_ADMIN_PASSWORD} --runtime-version Java_17
 ```
 
 ```bash
