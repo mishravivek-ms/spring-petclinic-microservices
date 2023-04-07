@@ -171,7 +171,7 @@ Create a resource group to contain your Azure Spring Cloud service.
 Create an instance of Azure Spring Cloud.
 
 ```bash
-    az spring app create --name ${SPRING_CLOUD_SERVICE} \
+    az spring create --name ${SPRING_CLOUD_SERVICE} \
             --sku standard \
             --sampling-rate 100 \
             --resource-group ${RESOURCE_GROUP} \
