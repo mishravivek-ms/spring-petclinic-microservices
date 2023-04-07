@@ -257,7 +257,7 @@ Setup diagnostics and publish logs and metrics from Spring Boot apps to Azure Lo
 Use the `application.yml` in the root of this project to load configuration into the Config Server in Azure Spring Cloud.
 
 ```bash
-    az spring-cloud config-server set \
+    az spring config-server set \
         --config-file application.yml \
         --name ${SPRING_CLOUD_SERVICE}
 ```
