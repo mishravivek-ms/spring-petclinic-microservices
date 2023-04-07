@@ -171,7 +171,7 @@ Create a resource group to contain your Azure Spring Cloud service.
 Create an instance of Azure Spring Cloud.
 
 ```bash
-    az spring-cloud create --name ${SPRING_CLOUD_SERVICE} \
+    az spring app create --name ${SPRING_CLOUD_SERVICE} \
             --sku standard \
             --sampling-rate 100 \
             --resource-group ${RESOURCE_GROUP} \
@@ -267,23 +267,23 @@ Use the `application.yml` in the root of this project to load configuration into
 Create 5 apps.
 
 ```bash
-    az spring-cloud app create --name ${API_GATEWAY} --instance-count 1 --assign-endpoint true \
+    az spring app create --name ${API_GATEWAY} --instance-count 1 --assign-endpoint true \
         --memory 2 \
         --jvm-options='-Xms2048m -Xmx2048m'
     
-    az spring-cloud app create --name ${ADMIN_SERVER} --instance-count 1 --assign-endpoint true \
+   az spring app create --name ${ADMIN_SERVER} --instance-count 1 --assign-endpoint true \
         --memory 2 \
         --jvm-options='-Xms2048m -Xmx2048m'
     
-    az spring-cloud app create --name ${CUSTOMERS_SERVICE} --instance-count 1 \
+    az spring app create --name ${CUSTOMERS_SERVICE} --instance-count 1 \
         --memory 2 \
         --jvm-options='-Xms2048m -Xmx2048m'
     
-    az spring-cloud app create --name ${VETS_SERVICE} --instance-count 1 \
+    az spring app create --name ${VETS_SERVICE} --instance-count 1 \
         --memory 2 \
         --jvm-options='-Xms2048m -Xmx2048m'
     
-    az spring-cloud app create --name ${VISITS_SERVICE} --instance-count 1 \
+    az spring app create --name ${VISITS_SERVICE} --instance-count 1 \
         --memory 2 \
         --jvm-options='-Xms2048m -Xmx2048m'
 ```
@@ -367,17 +367,17 @@ Create a MySQL database in Azure Database for MySQL.
 Deploy Spring Boot applications to Azure.
 
 ```bash
-    az spring-cloud app deploy --name ${API_GATEWAY} \
+    az spring app deploy --name ${API_GATEWAY} \
         --jar-path ${API_GATEWAY_JAR} \
         --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql' --runtime-version Java_17
     
     
-    az spring-cloud app deploy --name ${ADMIN_SERVER} \
+    az spring app deploy --name ${ADMIN_SERVER} \
         --jar-path ${ADMIN_SERVER_JAR} \
         --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql' --runtime-version Java_17
     
     
-    az spring-cloud app deploy --name ${CUSTOMERS_SERVICE} \
+    az spring app deploy --name ${CUSTOMERS_SERVICE} \
         --jar-path ${CUSTOMERS_SERVICE_JAR} \
         --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql' \
         --env MYSQL_SERVER_FULL_NAME=${MYSQL_SERVER_FULL_NAME} \
@@ -386,7 +386,7 @@ Deploy Spring Boot applications to Azure.
               MYSQL_SERVER_ADMIN_PASSWORD=${MYSQL_SERVER_ADMIN_PASSWORD} --runtime-version Java_17
     
     
-    az spring-cloud app deploy --name ${VETS_SERVICE} \
+    az spring app deploy --name ${VETS_SERVICE} \
         --jar-path ${VETS_SERVICE_JAR} \
         --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql' \
         --env MYSQL_SERVER_FULL_NAME=${MYSQL_SERVER_FULL_NAME} \
@@ -395,7 +395,7 @@ Deploy Spring Boot applications to Azure.
               MYSQL_SERVER_ADMIN_PASSWORD=${MYSQL_SERVER_ADMIN_PASSWORD} --runtime-version Java_17
               
     
-    az spring-cloud app deploy --name ${VISITS_SERVICE} \
+    az spring app deploy --name ${VISITS_SERVICE} \
         --jar-path ${VISITS_SERVICE_JAR} \
         --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql' \
         --env MYSQL_SERVER_FULL_NAME=${MYSQL_SERVER_FULL_NAME} \
@@ -405,7 +405,7 @@ Deploy Spring Boot applications to Azure.
 ```
 
 ```bash
-    az spring-cloud app show --name ${API_GATEWAY} | grep url
+    az spring app show --name ${API_GATEWAY} | grep url
 ```
 
 Navigate to the URL provided by the previous command to open the Pet Clinic application.
