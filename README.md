@@ -308,12 +308,13 @@ Create a MySQL database in Azure Database for MySQL.
      --resource-group ${RESOURCE_GROUP} \
      --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
     
+     MY_IP=$(curl http://whatismyip.akamai.com)
     // allow access from your dev machine for testing
     az mysql server firewall-rule create --name devMachine \
      --server ${MYSQL_SERVER_NAME} \
      --resource-group ${RESOURCE_GROUP} \
-     --start-ip-address <ip-address-of-your-dev-machine> \
-     --end-ip-address <ip-address-of-your-dev-machine>
+     --start-ip-address ${MY_IP} \
+     --end-ip-address ${MY_IP}
     
     // increase connection timeout
     az mysql server configuration set --name wait_timeout \
